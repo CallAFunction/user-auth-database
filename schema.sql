@@ -1,5 +1,6 @@
 CREATE TABLE users(
     user_id INTEGER PRIMARY KEY,
     username TEXT,
-    password TEXT 
+    password TEXT,
+    device_id INTEGER
 );
