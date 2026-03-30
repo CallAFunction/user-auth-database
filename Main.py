@@ -1,4 +1,7 @@
 import Modules
 
 password = Modules.auth.hash("hello")
-print(password)
+
+stored = Modules.auth.hash("hello")  
+print(Modules.auth.verify("hello", stored))        
+print(Modules.auth.verify("wrong", stored))        
