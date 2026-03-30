@@ -1,2 +1,2 @@
-import auth
-import db
+from . import auth
+from . import db
