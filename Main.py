@@ -1,4 +1,4 @@
 import Modules
 
-password = auth.hash("hello")
+password = Modules.auth.hash("hello")
 print(password)
