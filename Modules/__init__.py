@@ -1,2 +1,2 @@
-import auth.py
-import db.py
+import auth
+import db
