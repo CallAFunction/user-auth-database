@@ -1,6 +1,10 @@
 import Modules
 
-Modules.db.connect()
+Modules.db.connect('accounts.db')
+
+
+
+
 '''password = Modules.auth.hash("hello")
 
 stored = Modules.auth.hash("hello")  
