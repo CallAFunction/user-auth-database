@@ -1,7 +1,9 @@
 import Modules
+from cli import main
 
-Modules.db.connect('accounts.db')
-
+if __name__ == "__main__":
+    Modules.db.connect('accounts.db')
+    main()
 
 
 
