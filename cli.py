@@ -3,7 +3,7 @@ from getpass import getpass
 import argparse
 
 def main():
-    Modules.db.connect('accounts.db')
+    conn = Modules.db.connect('accounts.db')
     parser = argparse.ArgumentParser()
 
     parser.add_argument("--register", action="store_true")
@@ -14,7 +14,7 @@ def main():
         print("Register flow")
         username = input("enter username:")
         password = Modules.auth.hash(getpass("enter password:"))
-        Modules.db.new_user(username, password)
+        Modules.db.new_user(conn,username, password)
 
     if args.login:
         print("Login flow")
