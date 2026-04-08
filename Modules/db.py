@@ -6,7 +6,7 @@ def connect(database):
     return connection_cursor
 
 def new_user(username, password):
-    connection_cursor.execute(
+    sqlite3.connection_cursor.execute(
         f"""
         INSERT INTO users (username, password)
         values({username}, {password})
