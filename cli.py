@@ -1,3 +1,4 @@
+from getpass import getpass
 import argparse
 
 def main():
@@ -9,6 +10,9 @@ def main():
     args = parser.parse_args()
     if args.register:
         print("Register flow")
+        username = input("enter username:")
+        password = hash(getpass("enter password:"))
+        new_user(username, password)
 
     if args.login:
         print("Login flow")
