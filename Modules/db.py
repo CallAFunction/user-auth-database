@@ -7,8 +7,10 @@ def connect(database):
 
 def new_user(username, password):
     sqlite3.connection_cursor.execute(
-        f"""
-        INSERT INTO users (username, password)
-        values({username}, {password})
         """
+        INSERT INTO users(username, password)
+        VALUES (?, ?);
+        """,
+        (username, password)
     )
+    sqlite3.connection.commit()
