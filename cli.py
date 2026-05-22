@@ -21,12 +21,16 @@ def main():
         print("Login flow")
         username = input("enter username:")
         hash= Modules.db.find_user_password(conn,username)
-        password = getpass("enter password:")
-        authentication = Modules.auth.verify(password, hash)
-        if authentication:
-            print("Access Granted")
+        if hash is None:
+            print("user not found. please use the --register argument to add a user.")
+            exit
         else:
-            print("Access Denied")
+            password = getpass("enter password:")
+            authentication = Modules.auth.verify(password, hash)
+            if authentication:
+                print("Access Granted")
+            else:
+                print("Access Denied")
     else:
         print("unrecognised argument. Please use --register to create a user with a password, or --login to authenticate.")
 
