@@ -10,12 +10,13 @@ def main():
     parser.add_argument("--login", action="store_true")
 
     args = parser.parse_args()
+    #register argument
     if args.register:
         print("Register flow")
         username = input("enter username:")
         password = Modules.auth.hash(getpass("enter password:"))
         Modules.db.new_user(conn,username, password)
-
+    #login argument
     if args.login:
         print("Login flow")
         username = input("enter username:")
