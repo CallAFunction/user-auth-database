@@ -30,5 +30,6 @@ def find_user_password(conn, username):
     result  = cursor.fetchone()
     if result is None:
         return None
-    return result[0]
+    else: 
+        return result[0]
     
