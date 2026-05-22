@@ -20,8 +20,7 @@ def main():
         print("Login flow")
         username = input("enter username:")
         hash= Modules.db.find_user_password(conn,username)
-        print(hash)
-        password = input("enter password:")
+        password = getpass("enter password:")
         authentication = Modules.auth.verify(password, hash)
         if authentication:
             print("Access Granted")
