@@ -17,7 +17,7 @@ def main():
         password = Modules.auth.hash(getpass("enter password:"))
         Modules.db.new_user(conn,username, password)
     #login argument
-    if args.login:
+    elif args.login:
         print("Login flow")
         username = input("enter username:")
         hash= Modules.db.find_user_password(conn,username)
@@ -27,4 +27,6 @@ def main():
             print("Access Granted")
         else:
             print("Access Denied")
+    else:
+        print("unrecognised argument. Please use --register to create a user with a password, or --login to authenticate.")
 
