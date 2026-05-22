@@ -1,3 +1,5 @@
+#accounts database
+accounts.db
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
